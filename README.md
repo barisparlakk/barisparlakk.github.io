@@ -1,2 +1,2 @@
 # barisparlakk.github.io
-web
+Hos Geldiniz
