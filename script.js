@@ -61,6 +61,6 @@ window.onload = () => {
   const terminal = document.getElementById("terminal");
   terminal.classList.add("fade-in");
 
-  const welcomeMessage = "Welcome to the terminal portfolio!\nType `help` to see available commands.\n\n";
+  const welcomeMessage = "Welcome, type `help` to see available commands.\n\n";
   typeText(welcomeMessage);
 };
