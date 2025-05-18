@@ -4,7 +4,7 @@ const body = document.body;
 
 const commands = {
   info: `I am a Computer Engineering student with a strong interest in data science and artificial intelligence.`,
-  projects: `- Sensoria (Emotion recognition using EEG signals)\n- StepFree (Smart shoes for visually impaired individuals)\n- ChatBot App (Next.js, Supabase, Gemini API)`,
+  projects: `- Sensoria Project(Emotion recognition using EEG signals)\n- Bank Transaction Fraud Detection Project(can be found on my github)\n- AI module of a personalized education platform(using GEMINI API)`,
   github: `GitHub: https://github.com/barisparlakk`,
   linkedin: `LinkedIn: https://www.linkedin.com/in/barış-parlak-1a0a94252/`,
   socials: `Instagram: https://instagram.com/barissparlak\nTwitter/X: https://x.com/barisparlakkk`,
