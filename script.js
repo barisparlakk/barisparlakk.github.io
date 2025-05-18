@@ -4,12 +4,12 @@ const body = document.body;
 
 const commands = {
   info: `I am a Computer Engineering student with a strong interest in data science and artificial intelligence.`,
-  projects: `- Sensoria (Emotion recognition using EEG)\n- StepFree (Smart shoes for the visually impaired)\n- ChatBot App (built with Next.js, Supabase, Gemini API)`,
+  projects: `- Sensoria (Emotion recognition using EEG signals)\n- StepFree (Smart shoes for visually impaired individuals)\n- ChatBot App (Next.js, Supabase, Gemini API)`,
   github: `GitHub: https://github.com/barisparlakk`,
   linkedin: `LinkedIn: https://www.linkedin.com/in/barış-parlak-1a0a94252/`,
-  socials: `Instagram: https://instagram.com/barissparlak\nTwitter: https://twitter.com/bvris`,
+  socials: `Instagram: https://instagram.com/barissparlak\nTwitter/X: https://x.com/barisparlakkk`,
   cv: `Opening CV...`,
-  help: `Available commands: info, projects, github, linkedin, socials, cv, theme, help, clear`,
+  help: `Available commands:\n- info\n- projects\n- github\n- linkedin\n- socials\n- cv\n- theme\n- clear\n- help`,
   clear: "clear"
 };
 
@@ -56,8 +56,11 @@ input.addEventListener("keydown", function (event) {
   }
 });
 
-// Welcome message on load
+// Startup animation and welcome message
 window.onload = () => {
-  const welcomeMessage = "Welcome, type `help` to see available commands.\n\n";
+  const terminal = document.getElementById("terminal");
+  terminal.classList.add("fade-in");
+
+  const welcomeMessage = "Welcome to the terminal portfolio!\nType `help` to see available commands.\n\n";
   typeText(welcomeMessage);
 };

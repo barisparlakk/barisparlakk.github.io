@@ -34,6 +34,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  border-radius: 8px;
 }
 
 .output {
@@ -62,16 +63,18 @@ input {
   width: 100%;
 }
 
+/* Fade-in animation */
 .fade-in {
-  animation: fadeIn 1.5s ease-in;
+  animation: fadeIn 1.2s ease-in-out forwards;
+  opacity: 0;
 }
 
 @keyframes fadeIn {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(15px);
+    transform: translateY(30px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
