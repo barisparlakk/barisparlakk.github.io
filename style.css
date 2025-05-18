@@ -1,0 +1,55 @@
+:root {
+  --bg-color: #000000;
+  --text-color: #00ff00;
+  --shadow-color: #00ff00;
+}
+
+.light-theme {
+  --bg-color: #f0f0f0;
+  --text-color: #000000;
+  --shadow-color: #888888;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: monospace;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
+}
+
+.terminal {
+  width: 90%;
+  max-width: 800px;
+  background-color: var(--bg-color);
+  padding: 20px;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.output {
+  white-space: pre-line;
+  margin-bottom: 10px;
+}
+
+.input-line {
+  display: flex;
+  align-items: center;
+}
+
+.prompt {
+  margin-right: 5px;
+}
+
+input {
+  background: none;
+  border: none;
+  color: var(--text-color);
+  font-family: monospace;
+  font-size: 1em;
+  outline: none;
+  width: 100%;
+}
