@@ -28,6 +28,8 @@ body {
   background-color: var(--bg-color);
   padding: 20px;
   box-shadow: 0 0 10px var(--shadow-color);
+  height: 80vh;
+  overflow-y: auto;
 }
 
 .output {

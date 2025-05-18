@@ -11,8 +11,8 @@ const asciiArt = `
 `;
 
 const commands = {
-  info: `Ben Bilgisayar Mühendisliği öğrencisiyim. Veri bilimi ve yapay zeka ile ilgileniyorum.`,
-  projects: `- Sensoria: EEG ile duygu tanıma\n- Engelsiz Adım: Sensör destekli yardım aracı\n- ChatBot App: Next.js + Supabase + Gemini API`,
+  info: `Ben Bilgisayar Mühendisliği öğrencisiyim. Veri bilimi ve yapay zekaya ilgi duyuyorum.`,
+  projects: `- Sensoria (EEG ile duygu tanıma)\n- Engelsiz Adım (Görme engelliler için yardımcı sensör)\n- ChatBot App (Next.js, Supabase, Gemini API)`,
   github: `GitHub: https://github.com/kullaniciadiniz`,
   linkedin: `LinkedIn: https://www.linkedin.com/in/kullaniciadiniz`,
   socials: `Instagram: https://instagram.com/kullaniciadiniz\nTwitter: https://twitter.com/kullaniciadiniz`,
@@ -24,7 +24,7 @@ const commands = {
 
 input.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
-    const command = input.value.trim();
+    const command = input.value.trim().toLowerCase();
     output.innerHTML += `$ ${command}\n`;
 
     if (command === "clear") {
@@ -42,6 +42,6 @@ input.addEventListener("keydown", function (event) {
     }
 
     input.value = "";
-    window.scrollTo(0, document.body.scrollHeight);
+    output.scrollTop = output.scrollHeight;
   }
 });
