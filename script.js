@@ -1,9 +1,20 @@
 const output = document.getElementById("output");
 const input = document.getElementById("commandInput");
 const body = document.body;
+const shouldStartAtTop = !window.location.hash;
 
 const commandHistory = [];
 let historyIndex = 0;
+
+if ("scrollRestoration" in window.history) {
+  window.history.scrollRestoration = "manual";
+}
+
+function resetInitialScroll() {
+  if (shouldStartAtTop) {
+    window.scrollTo(0, 0);
+  }
+}
 
 const responses = {
   about:
@@ -126,5 +137,8 @@ document.querySelector(".terminal").addEventListener("click", () => {
 });
 
 window.addEventListener("load", () => {
-  typeText('Welcome. Type "help" to explore the portfolio, or scroll for the full site.');
+  resetInitialScroll();
+  typeText('Welcome. Type "help" to explore the portfolio, or scroll for the full site.', resetInitialScroll);
 });
+
+window.addEventListener("pageshow", resetInitialScroll);
