@@ -13,28 +13,30 @@
     content="Autonomous driving in CARLA, YOLOv11 medical vision, LLM fine-tuning, and a fully local Turkish RAG pipeline."
   />
   <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#e8ebed" media="(prefers-color-scheme: light)" />
-  <meta name="theme-color" content="#1c2127" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#20262c" />
   <title>Barış Parlak</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='10' width='52' height='48' fill='none' stroke='%23d7262c' stroke-width='6'/%3E%3Crect x='3' y='4' width='34' height='14' fill='%23d7262c'/%3E%3C/svg%3E" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='10' width='52' height='48' fill='none' stroke='%23e8343a' stroke-width='6'/%3E%3Crect x='3' y='4' width='34' height='14' fill='%23e8343a'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=20261012-1" />
+  <link rel="stylesheet" href="style.css?v=20261012-2" />
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top">Barış Parlak</a>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#terminal">Terminal</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <div class="stage" id="top">
+    <canvas class="scene" id="scene" aria-hidden="true"></canvas>
+    <div class="road-zone" aria-hidden="true"></div>
 
-  <main id="top">
+    <header class="site-header">
+      <a class="brand" href="#top">Barış Parlak</a>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#toolkit">Toolkit</a>
+        <a href="#terminal">Terminal</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title" class="name">
         <span class="detection" id="detection">
@@ -58,9 +60,13 @@
       </div>
     </section>
 
+    <p class="scene-note">The road below is a sketch of what Seyir sees. Point at it and you get tracked too.</p>
+  </div>
+
+  <main>
     <section class="section" id="projects" aria-labelledby="projects-title">
       <h2 id="projects-title">Projects</h2>
-      <div class="section-body">
+      <div class="section-body section-body-wide">
         <article class="project">
           <h3>Seyir</h3>
           <p class="project-what">An autonomous driving stack for Turkish traffic, built from scratch in CARLA 0.9.15.</p>
@@ -82,27 +88,79 @@
               <p>An MPC planner in CasADi and IPOPT returns commands in 50 ms or less.</p>
             </li>
           </ol>
-          <p class="project-stack">Written in Python and C++ with PyTorch, FastAPI, React and Docker.</p>
+          <p class="project-stack">Written in Python and C++ with PyTorch, FastAPI, React and Docker. The <a href="#top">road at the top of this page</a> is a small sketch of the same loop.</p>
         </article>
 
-        <article class="project">
-          <h3>DeepDerm</h3>
-          <p class="project-what">Real-time acne detection and remote treatment tracking.</p>
-          <p>
-            A YOLOv11 model finds lesions in patient photos and grades severity on the Hayashi scale.
-            Doctors review cases in a web panel while patients log their progress in a mobile app.
-          </p>
-          <p class="project-stack">Trained on data prepared in Roboflow; served by FastAPI and Spring Boot over PostgreSQL, with React and React Native clients.</p>
+        <article class="project project-split">
+          <div class="project-text">
+            <h3>DeepDerm</h3>
+            <p class="project-what">Real-time acne detection and remote treatment tracking.</p>
+            <p>
+              A YOLOv11 model finds lesions in patient photos and grades severity on the Hayashi scale.
+              Doctors review cases in a web panel while patients log their progress in a mobile app.
+            </p>
+            <p class="project-stack">Trained on data prepared in Roboflow; served by FastAPI and Spring Boot over PostgreSQL, with React and React Native clients.</p>
+          </div>
+          <figure class="derm">
+            <div class="derm-photo" aria-hidden="true">
+              <span class="lesion" style="--x: 22%; --y: 30%; --s: 11px"></span>
+              <span class="lesion" style="--x: 61%; --y: 22%; --s: 8px"></span>
+              <span class="lesion" style="--x: 44%; --y: 52%; --s: 13px"></span>
+              <span class="lesion" style="--x: 73%; --y: 60%; --s: 9px"></span>
+              <span class="lesion" style="--x: 28%; --y: 72%; --s: 10px"></span>
+              <span class="lesion" style="--x: 82%; --y: 34%; --s: 7px"></span>
+              <span class="derm-box" data-conf="0.91" style="--x: 22%; --y: 30%; --w: 40px"></span>
+              <span class="derm-box" data-conf="0.84" style="--x: 61%; --y: 22%; --w: 32px"></span>
+              <span class="derm-box" data-conf="0.95" style="--x: 44%; --y: 52%; --w: 46px"></span>
+              <span class="derm-box" data-conf="0.88" style="--x: 73%; --y: 60%; --w: 34px"></span>
+              <span class="derm-box" data-conf="0.79" style="--x: 28%; --y: 72%; --w: 38px"></span>
+              <span class="derm-box" data-conf="0.72" style="--x: 82%; --y: 34%; --w: 30px"></span>
+            </div>
+            <p class="derm-result"><strong>6 inflammatory lesions</strong> <span>Hayashi grade: moderate</span></p>
+            <figcaption>Illustration of DeepDerm’s output, not patient data.</figcaption>
+          </figure>
         </article>
 
-        <article class="project">
-          <h3>TurkRAG</h3>
-          <p class="project-what">Question answering over Turkish documents with no cloud dependency.</p>
-          <p>
-            Retrieval combines BM25 keyword search with FAISS vector search, and generation runs
-            locally through Ollama, so sensitive documents stay on your own hardware and within KVKK rules.
-          </p>
-          <p class="project-stack">Python, LangChain, Sentence-Transformers and FastAPI.</p>
+        <article class="project project-split">
+          <div class="project-text">
+            <h3>TurkRAG</h3>
+            <p class="project-what">Question answering over Turkish documents with no cloud dependency.</p>
+            <p>
+              Retrieval combines BM25 keyword search with FAISS vector search, and generation runs
+              locally through Ollama, so sensitive documents stay on your own hardware and within KVKK rules.
+            </p>
+            <p class="project-stack">Python, LangChain, Sentence-Transformers and FastAPI.</p>
+          </div>
+          <figure class="rag">
+            <p class="rag-query" lang="tr">KVKK’ya göre kişisel veriler ne kadar süre saklanabilir?</p>
+            <div class="rag-lists">
+              <div>
+                <h4>BM25 finds the words</h4>
+                <ol lang="tr">
+                  <li data-doc="policy">Saklama ve imha politikası, §4</li>
+                  <li data-doc="art7">KVKK madde 7</li>
+                  <li data-doc="notice">Aydınlatma metni</li>
+                </ol>
+              </div>
+              <div>
+                <h4>FAISS finds the meaning</h4>
+                <ol lang="tr">
+                  <li data-doc="art7">KVKK madde 7</li>
+                  <li data-doc="guide">Veri envanteri rehberi</li>
+                  <li data-doc="policy">Saklama ve imha politikası, §4</li>
+                </ol>
+              </div>
+            </div>
+            <div class="rag-fused">
+              <h4>Fused ranking sent to the local model</h4>
+              <ol lang="tr">
+                <li data-doc="art7">KVKK madde 7</li>
+                <li data-doc="policy">Saklama ve imha politikası, §4</li>
+                <li data-doc="guide">Veri envanteri rehberi</li>
+              </ol>
+            </div>
+            <figcaption>Example query. Hover a document to follow it through both rankings.</figcaption>
+          </figure>
         </article>
       </div>
     </section>
@@ -207,6 +265,7 @@
     </section>
   </main>
 
-  <script src="script.js?v=20261012-1"></script>
+  <script src="scene.js?v=20261012-2"></script>
+  <script src="script.js?v=20261012-2"></script>
 </body>
 </html>

@@ -1,13 +1,17 @@
 :root {
   --concrete: #e8ebed;
+  --paper: #f3f5f6;
   --ink: #18222c;
   --graphite: #55616c;
   --rule: #c9ced3;
   --detect: #d7262c;
   --on-detect: #ffffff;
-  --term-bg: #18222c;
-  --term-text: #dde3e8;
-  --term-dim: #8d9aa6;
+  --mark: #f2c230;
+  --lesion-class: #0f6f8f;
+
+  --asphalt: #20262c;
+  --on-asphalt: #e9ecee;
+  --on-asphalt-dim: #9aa5af;
 
   --gutter: clamp(16px, 5vw, 72px);
   --measure: 40rem;
@@ -19,30 +23,28 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --concrete: #1c2127;
+    --concrete: #1a1f24;
+    --paper: #232a31;
     --ink: #e4e8eb;
     --graphite: #9aa5af;
     --rule: #36404a;
-    --detect: #ff4d4f;
-    --on-detect: #1c2127;
-    --term-bg: #262d35;
-    --term-text: #dde3e8;
-    --term-dim: #8d9aa6;
+    --detect: #ff4b4b;
+    --on-detect: #1a1f24;
+    --lesion-class: #138bb3;
 
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --concrete: #1c2127;
+  --concrete: #1a1f24;
+  --paper: #232a31;
   --ink: #e4e8eb;
   --graphite: #9aa5af;
   --rule: #36404a;
-  --detect: #ff4d4f;
-  --on-detect: #1c2127;
-  --term-bg: #262d35;
-  --term-text: #dde3e8;
-  --term-dim: #8d9aa6;
+  --detect: #ff4b4b;
+  --on-detect: #1a1f24;
+  --lesion-class: #138bb3;
 
   color-scheme: dark;
 }
@@ -87,7 +89,8 @@ h4,
 p,
 ol,
 dl,
-dd {
+dd,
+figure {
   margin: 0;
 }
 
@@ -121,7 +124,41 @@ a:hover {
   white-space: nowrap;
 }
 
-/* Header */
+/* Stage: header and hero over the live perception view */
+
+.stage {
+  --road: clamp(180px, 31svh, 300px);
+  --detect: #ff4b4b;
+  --on-detect: #20262c;
+
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: max(660px, 100svh);
+  flex-direction: column;
+  padding-bottom: var(--road);
+  overflow: hidden;
+  background: var(--asphalt);
+  color: var(--on-asphalt);
+  color-scheme: dark;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.road-zone {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: var(--road);
+  pointer-events: none;
+}
 
 .site-header {
   display: flex;
@@ -145,28 +182,28 @@ a:hover {
 }
 
 .site-nav a {
-  color: var(--graphite);
+  color: var(--on-asphalt-dim);
   text-decoration: none;
 }
 
 .site-nav a:hover {
-  color: var(--ink);
+  color: var(--on-asphalt);
   text-decoration: underline;
 }
 
-/* Hero: the name, detected */
-
 .hero {
   display: grid;
+  flex: 1;
   grid-template-columns: auto minmax(16rem, 28rem);
+  align-content: end;
   align-items: end;
   justify-content: space-between;
   gap: 3rem var(--gutter);
-  padding: clamp(4rem, 12vw, 9rem) var(--gutter) clamp(4rem, 9vw, 7rem);
+  padding: clamp(3rem, 6vw, 4.5rem) var(--gutter) clamp(3.75rem, 6vw, 5rem);
 }
 
 .name {
-  font-size: clamp(4rem, 15vw, 12.5rem);
+  font-size: clamp(4rem, 12vw, 10.5rem);
   font-weight: 800;
   font-stretch: 112%;
   line-height: 0.86;
@@ -194,7 +231,7 @@ a:hover {
   background: var(--detect);
   color: var(--on-detect);
   font-size: clamp(0.8125rem, 1.1vw, 1rem);
-  font-weight: 600;
+  font-weight: 650;
   font-stretch: 75%;
   font-variant-numeric: tabular-nums;
   line-height: 1.3;
@@ -232,12 +269,28 @@ a:hover {
   color: var(--concrete);
   font-weight: 600;
   text-decoration: none;
-  transition: background-color 120ms ease;
+  transition: background-color 120ms ease, color 120ms ease;
 }
 
-.button:hover {
+.stage .button {
+  background: var(--on-asphalt);
+  color: var(--asphalt);
+}
+
+.button:hover,
+.stage .button:hover {
   background: var(--detect);
   color: var(--on-detect);
+}
+
+.scene-note {
+  position: absolute;
+  bottom: calc(var(--road) + 1rem);
+  left: var(--gutter);
+  max-width: calc(100% - 2 * var(--gutter));
+  color: var(--on-asphalt-dim);
+  font-size: 0.875rem;
+  font-stretch: 90%;
 }
 
 /* Sections */
@@ -248,6 +301,10 @@ a:hover {
   gap: 1.5rem var(--gutter);
   padding: clamp(3rem, 7vw, 6rem) var(--gutter);
   border-top: 1px solid var(--rule);
+}
+
+.stage + main .section:first-child {
+  border-top: 0;
 }
 
 .section h2 {
@@ -263,6 +320,10 @@ a:hover {
   max-width: 62rem;
 }
 
+.section-body-wide {
+  max-width: 76rem;
+}
+
 .section-body p {
   max-width: var(--measure);
 }
@@ -270,19 +331,19 @@ a:hover {
 /* Projects */
 
 .project + .project {
-  margin-top: clamp(3.5rem, 7vw, 5.5rem);
+  margin-top: clamp(4rem, 8vw, 6.5rem);
 }
 
 .project h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 750;
-  font-stretch: 110%;
-  line-height: 1;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.25rem, 5vw, 3.75rem);
+  font-weight: 800;
+  font-stretch: 118%;
+  line-height: 0.95;
+  letter-spacing: -0.025em;
 }
 
 .project-what {
-  margin: 0.75rem 0 1.25rem;
+  margin: 0.85rem 0 1.25rem;
   font-size: 1.3125rem;
   line-height: 1.4;
 }
@@ -291,6 +352,13 @@ a:hover {
   margin-top: 1rem;
   color: var(--graphite);
   font-size: 1rem;
+}
+
+.project-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  gap: 2.5rem clamp(2rem, 4vw, 4rem);
+  align-items: start;
 }
 
 .stages {
@@ -325,6 +393,151 @@ a:hover {
   color: var(--graphite);
   font-size: 0.9375rem;
   line-height: 1.5;
+}
+
+/* DeepDerm illustration */
+
+.derm-photo {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 25%, #e8bc9f, transparent),
+    radial-gradient(ellipse 70% 60% at 78% 75%, #c08a6f, transparent),
+    radial-gradient(circle at 55% 45%, #dcaa8c, #c4907a);
+}
+
+.lesion {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--s);
+  height: var(--s);
+  border-radius: 50%;
+  background: radial-gradient(circle, #9e3d37 0 30%, rgba(178, 72, 62, 0.55) 55%, transparent 72%);
+  translate: -50% -50%;
+}
+
+.derm-box {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--w);
+  height: var(--w);
+  border: 2px solid var(--lesion-class);
+  translate: -50% -50%;
+}
+
+.derm-box::before {
+  position: absolute;
+  bottom: 100%;
+  left: -2px;
+  padding: 0 0.35em;
+  background: var(--lesion-class);
+  color: #ffffff;
+  content: attr(data-conf);
+  font-size: 0.6875rem;
+  font-weight: 650;
+  font-stretch: 75%;
+  line-height: 1.45;
+}
+
+.derm-result {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--rule);
+  font-size: 1rem;
+}
+
+.derm-result span {
+  color: var(--graphite);
+}
+
+figcaption {
+  margin-top: 0.6rem;
+  color: var(--graphite);
+  font-size: 0.875rem;
+}
+
+/* TurkRAG retrieval example */
+
+.rag {
+  padding: clamp(1rem, 2.5vw, 1.5rem);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.rag-query {
+  margin-bottom: 1.25rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  quotes: "“" "”";
+}
+
+.rag-query::before {
+  content: open-quote;
+}
+
+.rag-query::after {
+  content: close-quote;
+}
+
+.rag h4 {
+  margin-bottom: 0.4rem;
+  color: var(--graphite);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.rag-lists {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.25rem;
+}
+
+.rag ol {
+  counter-reset: rank;
+}
+
+.rag li {
+  padding: 0.3rem 0.45rem;
+  margin-left: -0.45rem;
+  border-radius: 3px;
+  counter-increment: rank;
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  transition: background-color 120ms ease;
+}
+
+.rag li::before {
+  display: inline-block;
+  width: 1.2em;
+  color: var(--graphite);
+  content: counter(rank);
+  font-variant-numeric: tabular-nums;
+}
+
+.rag-fused {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--ink);
+}
+
+.rag-fused li {
+  font-weight: 600;
+}
+
+.rag:has(li[data-doc="art7"]:hover) li[data-doc="art7"],
+.rag:has(li[data-doc="policy"]:hover) li[data-doc="policy"],
+.rag:has(li[data-doc="guide"]:hover) li[data-doc="guide"],
+.rag:has(li[data-doc="notice"]:hover) li[data-doc="notice"] {
+  background: color-mix(in srgb, var(--mark) 55%, transparent);
 }
 
 /* Experience */
@@ -410,8 +623,8 @@ kbd {
   max-width: 50rem;
   height: 26rem;
   border-radius: 4px;
-  background: var(--term-bg);
-  color: var(--term-text);
+  background: var(--asphalt);
+  color: var(--on-asphalt);
   font-family: var(--mono);
   font-size: 0.9375rem;
   line-height: 1.55;
@@ -433,7 +646,7 @@ kbd {
 }
 
 .output .cmd {
-  color: var(--term-dim);
+  color: var(--on-asphalt-dim);
 }
 
 .input-line {
@@ -445,7 +658,7 @@ kbd {
 
 .prompt {
   flex: 0 0 auto;
-  color: var(--term-dim);
+  color: var(--on-asphalt-dim);
 }
 
 .input-line input {
@@ -455,9 +668,9 @@ kbd {
   border: 0;
   outline: 0;
   background: transparent;
-  color: var(--term-text);
+  color: var(--on-asphalt);
   font: inherit;
-  caret-color: var(--detect);
+  caret-color: #ff4b4b;
 }
 
 /* Contact */
@@ -496,6 +709,15 @@ kbd {
   .stages {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .project-split {
+    grid-template-columns: 1fr;
+  }
+
+  .derm,
+  .rag {
+    max-width: 36rem;
+  }
 }
 
 @media (max-width: 860px) {
@@ -514,12 +736,19 @@ kbd {
 }
 
 @media (max-width: 560px) {
+  .stage {
+    --road: clamp(170px, 30svh, 230px);
+
+    min-height: 0;
+  }
+
   .site-nav {
     gap: 0.25rem 1.1rem;
   }
 
   .hero {
     padding-top: 3.5rem;
+    padding-bottom: 4.5rem;
   }
 
   .name {
@@ -536,7 +765,8 @@ kbd {
 
   .stages,
   .timeline li,
-  .toolkit {
+  .toolkit,
+  .rag-lists {
     grid-template-columns: 1fr;
   }
 
