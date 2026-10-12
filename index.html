@@ -5,261 +5,208 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Barış Parlak is an AI Developer and Computer Engineering student focused on autonomous systems, computer vision, medical AI, and local LLM/RAG systems."
+    content="Barış Parlak is an AI developer and computer engineering student building autonomous driving, medical computer vision, and local Turkish language systems."
   />
-  <meta property="og:title" content="Barış Parlak | AI Developer" />
+  <meta property="og:title" content="Barış Parlak, AI developer" />
   <meta
     property="og:description"
-    content="Portfolio of autonomous driving, medical computer vision, LLM fine-tuning, and local Turkish RAG projects."
+    content="Autonomous driving in CARLA, YOLOv11 medical vision, LLM fine-tuning, and a fully local Turkish RAG pipeline."
   />
   <meta property="og:type" content="website" />
-  <title>Barış Parlak | AI Developer</title>
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230b0f14'/%3E%3Ctext x='32' y='39' text-anchor='middle' font-size='23' font-family='monospace' font-weight='700' fill='%235ee6a8'%3EBP%3C/text%3E%3C/svg%3E" />
-  <link rel="stylesheet" href="style.css?v=20260625-1" />
+  <meta name="theme-color" content="#e8ebed" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#1c2127" media="(prefers-color-scheme: dark)" />
+  <title>Barış Parlak</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect x='6' y='10' width='52' height='48' fill='none' stroke='%23d7262c' stroke-width='6'/%3E%3Crect x='3' y='4' width='34' height='14' fill='%23d7262c'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=20261012-1" />
 </head>
 <body>
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Barış Parlak home">
-      <span>Barış Parlak</span>
-    </a>
-    <nav class="site-nav" aria-label="Primary navigation">
+    <a class="brand" href="#top">Barış Parlak</a>
+    <nav class="site-nav" aria-label="Primary">
       <a href="#projects">Projects</a>
       <a href="#experience">Experience</a>
-      <a href="#skills">Skills</a>
+      <a href="#toolkit">Toolkit</a>
       <a href="#terminal">Terminal</a>
       <a href="#contact">Contact</a>
     </nav>
   </header>
 
   <main id="top">
-    <section class="hero-section" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="eyebrow">Jr. Data Scientist / AI Developer</p>
-        <h1 id="hero-title">Building AI systems for autonomy, vision, and local language intelligence.</h1>
-        <p class="hero-text">
-          Computer Engineering student focused on CARLA autonomous driving stacks,
-          YOLOv11 medical vision, LLM fine-tuning, and KVKK-friendly Turkish RAG pipelines.
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title" class="name">
+        <span class="detection" id="detection">
+          <span class="det-box" aria-hidden="true">
+            <span class="det-label">person <span id="det-conf">0.98</span></span>
+          </span>
+          Barış<br />Parlak
+        </span>
+      </h1>
+      <div class="hero-intro">
+        <p>
+          AI developer and computer engineering student in Istanbul. I build perception,
+          planning and language systems: a self-driving stack for Turkish traffic, a skin
+          lesion detector, and a Turkish RAG pipeline that never leaves the machine.
         </p>
-        <div class="hero-actions" aria-label="Primary actions">
-          <a class="button primary" href="cv.pdf" target="_blank" rel="noopener">My CV</a>
-          <a class="button" href="https://github.com/barisparlakk" target="_blank" rel="noopener" aria-label="GitHub profile">
-            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18-.45-1.15-1.1-1.46-1.1-1.46-.9-.61.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.89 1.52 2.34 1.08 2.91.83.09-.64.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03A9.45 9.45 0 0 1 12 6.02c.85 0 1.7.11 2.5.33 1.9-1.3 2.74-1.03 2.74-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.86v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2Z" />
-            </svg>
-            GitHub
-          </a>
-          <a class="button" href="mailto:barisparlak36@gmail.com" aria-label="Email Barış Parlak">
-            <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M4 5h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Zm0 2v.22l8 5.33 8-5.33V7H4Zm0 2.63V17h16V9.63l-7.45 4.96a1 1 0 0 1-1.1 0L4 9.63Z" />
-            </svg>
-            Email
-          </a>
-        </div>
+        <p class="hero-actions">
+          <a class="button" href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+          <a href="https://github.com/barisparlakk" target="_blank" rel="noopener">GitHub</a>
+          <a href="mailto:barisparlak36@gmail.com">Email</a>
+        </p>
       </div>
-
-      <aside class="signal-panel" aria-label="Portfolio highlights">
-        <div class="signal-header">
-          <span class="status-dot"></span>
-          <span>current_focus.pipeline</span>
-        </div>
-        <div class="pipeline" aria-hidden="true">
-          <span>Perception</span>
-          <span>Prediction</span>
-          <span>Planning</span>
-          <span>Control</span>
-        </div>
-        <dl class="metrics-grid">
-          <div>
-            <dt>Stack</dt>
-            <dd>CARLA + PyTorch</dd>
-          </div>
-          <div>
-            <dt>Vision</dt>
-            <dd>YOLOv11</dd>
-          </div>
-          <div>
-            <dt>LLM</dt>
-            <dd>LoRA + RAG</dd>
-          </div>
-          <div>
-            <dt>Backend</dt>
-            <dd>FastAPI</dd>
-          </div>
-        </dl>
-      </aside>
-    </section>
-
-    <section class="section intro-grid" aria-label="Profile summary">
-      <div>
-        <p class="section-kicker">Profile</p>
-        <h2>AI engineering with an applied systems bias.</h2>
-      </div>
-      <p>
-        I work across end-to-end ML pipelines: data processing, model training,
-        deployment APIs, and product-facing interfaces. My recent work centers on autonomous
-        driving, medical computer vision, and private/local language systems.
-      </p>
     </section>
 
     <section class="section" id="projects" aria-labelledby="projects-title">
-      <div class="section-heading">
-        <p class="section-kicker" id="projects-title">Selected Work</p>
-      </div>
-      <div class="project-grid">
-        <article class="project-card">
-          <div class="project-visual autonomy-visual" aria-hidden="true">
-            <span class="lane left-lane"></span>
-            <span class="lane right-lane"></span>
-            <span class="vehicle"></span>
-            <span class="scan scan-one"></span>
-            <span class="scan scan-two"></span>
-          </div>
-          <p class="project-type">Autonomous Driving</p>
+      <h2 id="projects-title">Projects</h2>
+      <div class="section-body">
+        <article class="project">
           <h3>Seyir</h3>
-          <p>
-            End-to-end autonomous driving stack in CARLA 0.9.15 for Turkish traffic conditions:
-            perception, trajectory prediction, planning, and control.
-          </p>
-          <ul class="tag-list" aria-label="Seyir technologies">
-            <li>CARLA</li>
-            <li>YOLOv11</li>
-            <li>PyTorch</li>
-            <li>PPO</li>
-            <li>MPC</li>
-            <li>C++</li>
-          </ul>
+          <p class="project-what">An autonomous driving stack for Turkish traffic, built from scratch in CARLA 0.9.15.</p>
+          <ol class="stages">
+            <li>
+              <h4>Perception</h4>
+              <p>YOLOv11n detects objects, UFLD-v2 finds lanes, Depth-Anything-V2 estimates depth. LiDAR projection fuses them into a 100×100 occupancy grid.</p>
+            </li>
+            <li>
+              <h4>Prediction</h4>
+              <p>A SocialTransformer forecasts several possible trajectories for every road user.</p>
+            </li>
+            <li>
+              <h4>Planning</h4>
+              <p>Global A* sets the route, a behaviour state machine picks the manoeuvre, and PPO learns the local decisions.</p>
+            </li>
+            <li>
+              <h4>Control</h4>
+              <p>An MPC planner in CasADi and IPOPT returns commands in 50 ms or less.</p>
+            </li>
+          </ol>
+          <p class="project-stack">Written in Python and C++ with PyTorch, FastAPI, React and Docker.</p>
         </article>
 
-        <article class="project-card">
-          <div class="project-visual derm-visual" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <p class="project-type">Medical Vision</p>
+        <article class="project">
           <h3>DeepDerm</h3>
+          <p class="project-what">Real-time acne detection and remote treatment tracking.</p>
           <p>
-            YOLOv11-based acne detection and treatment tracking system with doctor panel,
-            patient app, severity grading, and full-stack product architecture.
+            A YOLOv11 model finds lesions in patient photos and grades severity on the Hayashi scale.
+            Doctors review cases in a web panel while patients log their progress in a mobile app.
           </p>
-          <ul class="tag-list" aria-label="DeepDerm technologies">
-            <li>YOLOv11</li>
-            <li>FastAPI</li>
-            <li>React</li>
-            <li>React Native</li>
-            <li>PostgreSQL</li>
-          </ul>
+          <p class="project-stack">Trained on data prepared in Roboflow; served by FastAPI and Spring Boot over PostgreSQL, with React and React Native clients.</p>
         </article>
 
-        <article class="project-card">
-          <div class="project-visual rag-visual" aria-hidden="true">
-            <span>BM25</span>
-            <span>FAISS</span>
-            <span>Ollama</span>
-            <span>API</span>
-          </div>
-          <p class="project-type">Local LLM / NLP</p>
+        <article class="project">
           <h3>TurkRAG</h3>
+          <p class="project-what">Question answering over Turkish documents with no cloud dependency.</p>
           <p>
-            Fully local Turkish RAG pipeline combining keyword and semantic retrieval for
-            cloud-free, KVKK-conscious document search and question answering.
+            Retrieval combines BM25 keyword search with FAISS vector search, and generation runs
+            locally through Ollama, so sensitive documents stay on your own hardware and within KVKK rules.
           </p>
-          <ul class="tag-list" aria-label="TurkRAG technologies">
-            <li>LangChain</li>
-            <li>FAISS</li>
-            <li>BM25</li>
-            <li>Ollama</li>
-            <li>FastAPI</li>
-          </ul>
+          <p class="project-stack">Python, LangChain, Sentence-Transformers and FastAPI.</p>
         </article>
       </div>
     </section>
 
-    <section class="section split-section" id="experience" aria-labelledby="experience-title">
-      <div class="section-heading">
-        <p class="section-kicker" id="experience-title">Experience</p>
-      </div>
-      <div class="timeline">
-        <article class="timeline-item">
-          <p class="time-range">Apr 2026 - May 2026</p>
-          <h3>Artificial Intelligence Developer, Caladrius</h3>
-          <p>
-            Designed a LoRA fine-tuning pipeline for MedGemma 27B on oral epithelial
-            dysplasia classification and structured outputs aligned with WHO 2022 criteria.
-          </p>
-        </article>
-        <article class="timeline-item">
-          <p class="time-range">Feb 2025 - Oct 2025</p>
-          <h3>Machine Learning Developer, Unidev Software Turkey</h3>
-          <p>
-            Analyzed geospatial datasets, built interactive Folium maps, designed MyUni database
-            integrations, and developed personalization using collaborative filtering and K-means.
-          </p>
-        </article>
+    <section class="section" id="experience" aria-labelledby="experience-title">
+      <h2 id="experience-title">Experience</h2>
+      <div class="section-body">
+        <ol class="timeline">
+          <li>
+            <p class="when"><time datetime="2026-04">Apr</time>–<time datetime="2026-05">May 2026</time></p>
+            <div>
+              <h3>AI developer, Caladrius</h3>
+              <p>
+                Designed a LoRA fine-tuning pipeline for MedGemma 27B that classifies oral epithelial
+                dysplasia and returns structured findings following the WHO 2022 criteria. Set up a
+                two-stage labelling workflow: medical students pre-annotate, specialists revise.
+              </p>
+            </div>
+          </li>
+          <li>
+            <p class="when"><time datetime="2025-02">Feb</time>–<time datetime="2025-10">Oct 2025</time></p>
+            <div>
+              <h3>Machine learning developer, Unidev Software Turkey</h3>
+              <p>
+                Analysed large geospatial datasets and mapped them with Folium. Designed the MyUni
+                MySQL database behind Django REST APIs. Built a personalisation module with
+                collaborative filtering and K-means that raised user engagement by 40%.
+              </p>
+            </div>
+          </li>
+          <li>
+            <p class="when"><time datetime="2024">2024</time>–<time datetime="2025">2025</time></p>
+            <div>
+              <h3>Computer Society chair, IEEE İnönü Student Branch</h3>
+              <p>Formed cross-disciplinary project teams and ran regular algorithm workshops.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="subhead">Education</h3>
+        <ol class="timeline timeline-compact">
+          <li>
+            <p class="when"><time datetime="2024-08">2024</time>–now</p>
+            <p>Computer Engineering, İnönü University</p>
+          </li>
+          <li>
+            <p class="when"><time datetime="2025-09">2025</time>–<time datetime="2026-02">2026</time></p>
+            <p>Computer Science, Military University of Technology in Warsaw (Erasmus+)</p>
+          </li>
+          <li>
+            <p class="when"><time datetime="2022-09">2022</time>–<time datetime="2024-08">2024</time></p>
+            <p>Computer Engineering, Malatya Turgut Özal University</p>
+          </li>
+        </ol>
       </div>
     </section>
 
-    <section class="section" id="skills" aria-labelledby="skills-title">
-      <div class="section-heading">
-        <p class="section-kicker">Toolkit</p>
-        <h2 id="skills-title">Technical focus areas</h2>
-      </div>
-      <div class="skills-grid">
-        <section class="skill-group" aria-labelledby="skill-autonomy">
-          <h3 id="skill-autonomy">Autonomy, Vision & DL</h3>
-          <p>A*, MPC, behavior FSM, PPO, sensor fusion, YOLOv11, lane/depth estimation, PyTorch, LSTM, SocialTransformer.</p>
-        </section>
-        <section class="skill-group" aria-labelledby="skill-llm">
-          <h3 id="skill-llm">LLM & NLP</h3>
-          <p>LoRA fine-tuning, MedGemma 27B, LangChain, FAISS, BM25, Hugging Face, local Turkish retrieval pipelines.</p>
-        </section>
-        <section class="skill-group" aria-labelledby="skill-stack">
-          <h3 id="skill-stack">Engineering Stack</h3>
-          <p>Python, C++, SQL, FastAPI, Django, Spring Boot, PostgreSQL, MySQL, Docker, Git, React, React Native.</p>
-        </section>
-        <section class="skill-group" aria-labelledby="skill-langs">
-          <h3 id="skill-langs">Languages</h3>
-          <p>Turkish native, English C1, Polish B1, German A2, Indonesian A1.</p>
-        </section>
+    <section class="section" id="toolkit" aria-labelledby="toolkit-title">
+      <h2 id="toolkit-title">Toolkit</h2>
+      <div class="section-body">
+        <dl class="toolkit">
+          <dt>Autonomy and vision</dt>
+          <dd>A*, MPC with CasADi/IPOPT, behaviour state machines, PPO, sensor fusion, YOLOv11, lane and depth estimation, PyTorch, LSTM, SocialTransformer</dd>
+          <dt>Language models</dt>
+          <dd>LoRA fine-tuning, MedGemma 27B, Hugging Face, LangChain, FAISS, BM25, Ollama</dd>
+          <dt>Programming</dt>
+          <dd>Python, C++ and SQL daily; R and Java when needed</dd>
+          <dt>Backend and data</dt>
+          <dd>FastAPI, Django, Spring Boot, PostgreSQL, MySQL, Docker, Git, Pandas, NumPy, Folium, React, React Native</dd>
+          <dt>Spoken languages</dt>
+          <dd>Turkish (native), English (C1), Polish (B1), German (A2), Indonesian (A1)</dd>
+        </dl>
       </div>
     </section>
 
-    <section class="section terminal-section" id="terminal" aria-labelledby="terminal-title">
-      <div class="section-heading">
-        <p class="section-kicker">Interactive</p>
-        <h2 id="terminal-title">Portfolio terminal</h2>
-      </div>
-      <div class="terminal" aria-label="Interactive portfolio terminal">
-        <div class="terminal-topbar">
-          <span></span>
-          <span></span>
-          <span></span>
-          <p>baris@portfolio</p>
+    <section class="section" id="terminal" aria-labelledby="terminal-title">
+      <h2 id="terminal-title">Terminal</h2>
+      <div class="section-body">
+        <p class="terminal-hint">Prefer a keyboard? Type <kbd>help</kbd> to see the commands.</p>
+        <div class="terminal">
+          <div class="output" id="output" aria-live="polite"></div>
+          <label class="input-line" for="commandInput">
+            <span class="prompt" aria-hidden="true">baris@istanbul&nbsp;$</span>
+            <span class="visually-hidden">Command</span>
+            <input type="text" id="commandInput" autocomplete="off" autocapitalize="off" spellcheck="false" />
+          </label>
         </div>
-        <div class="output" id="output" aria-live="polite"></div>
-        <label class="input-line" for="commandInput">
-          <span class="prompt">$</span>
-          <input type="text" id="commandInput" autocomplete="off" spellcheck="false" />
-        </label>
       </div>
     </section>
 
-    <section class="section contact-section" id="contact" aria-labelledby="contact-title">
-      <div>
-        <p class="section-kicker">Contact</p>
-        <h2 id="contact-title">Open to AI, autonomy, and data roles.</h2>
-      </div>
-      <div class="contact-actions">
-        <a href="mailto:barisparlak36@gmail.com">barisparlak36@gmail.com</a>
-        <a href="https://www.linkedin.com/in/bar%C4%B1%C5%9F-parlak-1a0a94252/" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/barisparlakk" target="_blank" rel="noopener">GitHub</a>
-        <a href="cv.pdf" target="_blank" rel="noopener">Download CV</a>
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <div class="section-body">
+        <p>I’m looking for roles in AI, autonomy and data.</p>
+        <p><a class="contact-email" href="mailto:barisparlak36@gmail.com">barisparlak36@gmail.com</a></p>
+        <p class="contact-links">
+          <a href="https://www.linkedin.com/in/bar%C4%B1%C5%9F-parlak-1a0a94252/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://github.com/barisparlakk" target="_blank" rel="noopener">GitHub</a>
+          <a href="cv.pdf" target="_blank" rel="noopener">CV (PDF)</a>
+        </p>
       </div>
     </section>
   </main>
 
-  <script src="script.js?v=20260625-1"></script>
+  <script src="script.js?v=20261012-1"></script>
 </body>
 </html>
